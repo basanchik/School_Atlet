@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Материально-техническое обеспечение {% endblock %}
+
+{% block content %} 
+    {% for i in Material %}
+        {{ i.equipped_classrooms }}
+        {{ i.practical_training_facilities }}
+        {{ i.libraries }}
+        {{ i.sports_facilities }}
+        {{ i.teaching_aids }}
+        {{ i.student_meals }}
+        {{ i.student_healthcare }}
+        {{ i.information_systems_access }}
+        {{ i.own_electronic_resources }}
+        {{ i.external_electronic_resources }}
+    {% endfor %}
+{% endblock %}

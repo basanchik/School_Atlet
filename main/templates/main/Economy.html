@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Образовательные стандарты и требования {% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Мон2:</h3>
+        {% for i in mon2 %}
+          <div class="card mb-3">
+            <div class="card-header">
+              {{ i.period }}
+            </div>
+            <div class="card-body">
+              {% if i.budget_federal %}
+                <a href="{{ i.budget_federal.url }}" class="card-link">Бюджетные ассигнования федерального бюджета</a>
+              {% endif %} 
+              {% if i.budget_regional %}
+                <a href="{{ i.budget_regional.url }}" class="card-link">Бюджеты субъектов Российской Федерации</a>
+              {% endif %} 
+              {% if i.budget_local %}
+                <a href="{{ i.budget_local.url }}" class="card-link">Местные бюджеты</a>
+              {% endif %} 
+              {% if i.paid_services %}
+                <a href="{{ i.paid_services.url }}" class="card-link">Договоры об оказании платных образовательных услуг</a>
+              {% endif %} 
+              <p class="card-text">{{ i.tuition_cost }}</p>      
+              <p class="card-text">{{ i.payment_amount }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <div class="col-md-6">
+        <h3>Мон:</h3>
+        {% for i in mon %}
+          <div class="card mb-3">
+            <div class="card-header">
+              {{ i.period }}
+            </div>
+            <div class="card-body">
+              {{ i.financial_year }}
+              {% if i.incoming_funds %}
+                <a href="{{ i.incoming_funds.url }}" class="card-link">Образец договора об оказании платных образовательных услуг</a>
+              {% endif %}    
+              {% if i.outgoing_funds %}
+                <a href="{{ i.outgoing_funds.url }}" class="card-link">Образец договора об оказании платных образовательных услуг</a>
+              {% endif %}    
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Мон3:</h3>
+        {% for i in mon3 %}
+          <div class="card mb-3">
+            <div class="card-header">
+              {{ i.period }}
+            </div>
+            <div class="card-body">
+              {% if i.financial_plan %}
+                <a href="{{ i.financial_plan.url }}" class="card-link">План финансово-хозяйственной деятельности</a>
+              {% endif %}      
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

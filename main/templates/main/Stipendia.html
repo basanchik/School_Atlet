@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Стипендии и меры поддержки {% endblock %}
+
+{% block content %} 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Информация</th>
+            <th>Стипендии</th>
+            <th>Социальная поддержка</th>
+            <th>Общежитие</th>
+            <th>Проживание</th>
+            <th>Оплата за проживание</th>
+            <th>Трудоустройство</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in money %}
+            <tr>
+                <td>{{ i.information }}</td>
+                <td>{{ i.scholarships }}</td>
+                <td>{{ i.social_support }}</td>
+                <td>{{ i.dormitory }}</td>
+                <td>{{ i.accommodation }}</td>
+                <td>{{ i.accommodation_payment }}</td>
+                <td>{{ i.employment }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

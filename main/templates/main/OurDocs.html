@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %} Наши документы {% endblock %}
+
+{% block content %}
+
+     
+     
+    <table class="table">
+      <tbody>
+   {% for i in docs %}  
+        <tr>
+          <th scope="row"></th>
+          <td><p>{{ i.nameDocs }}</p></td>
+          <td><li class="nav-item">
+            <a class="nav-link" href="{{ i.docs.url }}">Документ</a>
+          </li></td>
+          <td>{{ i.dateDocs }}</td>
+    {% endfor %}
+      </tbody>
+    </table>
+  
+{% endblock %}

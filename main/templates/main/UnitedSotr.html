@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Международное сотрудничество {% endblock %}
+
+{% block content %} 
+    {% for i in h %}
+        {{ i.agreements  }}
+        <p>{% if i.document %}<a href="{{ i.document.url }}">Заключенные и планируемые договоры</a>{% endif %}</p>
+        {{ i.accreditation  }}
+        <p>{% if i.document2 %}<a href="{{ i.document2.url }}">Международная аккредитация образовательных программ</a>{% endif %}</p>
+    {% endfor %}
+{% endblock %}

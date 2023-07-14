@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Вакантные места {% endblock %}
+
+{% block content %} 
+<table class="table">
+    <thead>
+        <tr>
+            <th>Программа</th>
+            <th>Специальность</th>
+            <th>Обучение</th>
+            <th>Научная специальность</th>
+            <th>Профессия</th>
+            <th>Федеральный бюджет</th>
+            <th>Региональный бюджет</th>
+            <th>Местный бюджет</th>
+            <th>Платное обучение</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in bo %}
+            <tr>
+                <td>{{ i.program }}</td>
+                <td>{{ i.specialty }}</td>
+                <td>{{ i.training_direction }}</td>
+                <td>{{ i.scientific_specialty }}</td>
+                <td>{{ i.profession }}</td>
+                <td>{{ i.federal_budget_seats }}</td>
+                <td>{{ i.regional_budget_seats }}</td>
+                <td>{{ i.local_budget_seats }}</td>
+                <td>{{ i.private_seats }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

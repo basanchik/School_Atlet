@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} Про нас {% endblock %}
+{% block content %}
+  {% for i in about %}
+    <p>{{i.LongNameOrg}}</p>
+    <p>{{i.ShortNameOrg}}</p>
+    <p>{{i.DateCreator}}</p>
+    <p>{{i.MinSport}}</p>
+    <p>{{i.Filials}}</p>
+    <p>{{i.GeoPosition}}</p>
+    <p>{{i.GraFik}}</p>
+    <p>{{i.ContactPhone}}</p>
+    <p>{{i.EmailAdress}}</p>
+    <p>{{i.SiteAdress}}</p>
+    <p>{{i.Tren}}</p>
+    <img src="{{ i.TrenPhoto.url }}" class="img-fluid rounded-start" alt="...">
+  {% endfor %}
+ {% endblock %}

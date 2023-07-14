@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Navbar</title>
+  <!-- Подключите стили Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Школа атлетики Республики Калмыкия</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}">Новости</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Специальный раздел
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Основные сведения</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'TrenerSostav' %}">Структура и органы управления образовательной организацией</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'docs' %}">Документы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'obraz' %}">Образование</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'sys' %}">Руководство. Педагогический (научно-педагогический) состав</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'MaterialTexOb' %}">Материально-техническое обеспечение и оснащенность образовательного процесса</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'PayUslugi' %}">Платные образовательные услуги</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Economy' %}">Финансово-хозяйственная деятельность</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'VakantnyeMesta' %}">Вакантные места для приема(перевода) обучающихся</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'DostupSreda' %}">Доступная среда</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'UnitedSotr' %}">Международное сотрудничество</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'ObrazStandart' %}">Образовательные стандарты и требования</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Stipendia' %}">Стипендии и меры поддержки обучающихся</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Подключите скрипты Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

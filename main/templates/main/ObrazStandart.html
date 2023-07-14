@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Образовательные стандарты и требования {% endblock %}
+
+{% block content %}
+    {% for i in fedtandart %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ i.PrimenObrStandartText }}</h5>
+            {% if i.PrimenObrStandart %}
+                <a href="{{ i.PrimenObrStandart.url }}" class="card-link">Документ о применяемых государственных образовательных стандартах</a>
+            {% else %}
+                <p class="card-text">Нет доступного документа о применяемых государственных образовательных стандартах</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ i.UtverObrStandartText }}</h5>
+            {% if i.UtverObrStandart %}
+                <a href="{{ i.UtverObrStandart.url }}" class="card-link">Документ об утвержденных государственных стандартах</a>
+            {% else %}
+                <p class="card-text">Нет доступного документа об утвержденных государственных стандартах</p>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

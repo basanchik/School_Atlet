@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block head %}{% endblock %}</h1>
+        <h2>{% block header %}{% endblock %}</h2>
+    </header>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+          <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+          <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Школа по боксу имени Балзанова</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Главная</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'news' %}">Новости</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}">Основные сведения</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'TrenerSostav' %}">Структура и органы управления образовательной организацией</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'docs' %}">Документы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'obraz' %}">Образование</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'sys' %}">Руководство. Педагогический (научно-педагогический) состав</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'MaterialTexOb' %}">Материально-техническое обеспечение и оснащенность образовательного процесса</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'PayUslugi' %}">Платные образовательные услуги</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Economy' %}">Финансово-хозяйственная деятельность</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'VakantnyeMesta' %}">Вакантные места для приема(перевода) обучающихся</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'DostupSreda' %}">Доступная среда</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'UnitedSotr' %}">Международное сотрудничество</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'ObrazStandart' %}">Образовательные стандарты и требования</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Stipendia' %}">Стипендии и меры поддержки обучающихся</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ссылка 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ссылка 2</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+      {% block content %}
+      
+      {% endblock %}
+      <footer class="bg-dark text-white text-center fixed-bottom">
+        <div class="bg-secondary py-2">
+          <div class="container text-center">
+            <p class="mb-0">© 2022 Все права защищены.</p>
+          </div>
+        </div>
+      </footer>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

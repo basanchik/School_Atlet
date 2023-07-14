@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %} Образование {% endblock %}
+
+{% block content %} 
+    {% for i in nameObraz %}
+    <h4>{{ i.nameObraz }}</h4>
+     {% for i in elementsObraz %}
+        
+        Реализуемые образовательные программы 
+  
+                <p>{{ i.formObuch }}</p>
+                <p>{{ i.normSrokObuch }}</p>
+                <p>{{ i.srokAkreditObuch }}</p>
+                <p>{{ i.languageObraz }}</p>
+                <p>{{ i.praktikObraz }}</p>
+                <p>{{ i.distanceObraz }}</p>
+           
+         {% endfor %}
+         
+         {% for i in elementsObraz %}
+        <!-- Button trigger modal -->
+       
+        Описание образовательные программы 
+       
+     
+                <p>{% if i.uchebPlan %}<a href="{{ i.uchebPlan.url }}">Документ</a>{% endif %}Учебный план образовательной программы</p>
+                <p>{% if i.annatotionDis %}<a href="{{ i.annatotionDis.url }}">Документ</a>{% endif %}об аннотации к рабочи программа дисциплин</p>
+                <p>{% if i.calendarUcheb %}<a href="{{ i.calendarUcheb.url }}">Документ</a>{% endif %}о календарном учебном графике</p>
+                <p>{% if i.metodDocs %}<a href="{{ i.metodDocs.url }}">Документ</a>{% endif %}методические и другие документы разработанные образовательной организацией</p>
+
+         {% endfor %}
+
+         {% for i in elementsObraz %}
+        Численность обучающихся по реализуемым образовательным программам  
+
+       
+                <p>{{ i.obshislo}}</p>
+                <p>{{ i.obshisloBudgetFed }}</p>
+                <p>{{ i.obshisloBudgetReg }}</p>
+                <p>{{ i.obshisloBudgetSMO }}</p>
+                <p>{{ i.obshisloDogovor }}</p>
+
+                <p>{% if i.Licenzy %}<a href="{{ i.Licenzy.url }}">Документ</a>{% endif %}Лицензия на осуществление образовательной деятельности</p>
+            
+        {% endfor %}  
+        
+           
+    {% endfor %}    
+{% endblock %}

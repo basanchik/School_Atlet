@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %} Доступная среда {% endblock %}
+
+{% block content %} 
+   {% for i in Col %}
+    {{ i.program  }} 
+    {{ i.specialty  }}
+    {{ i.training_direction  }}
+    {{ i.scientific_specialty  }}
+    {{ i.profession  }}
+    {{ i.federal_budget_seats  }}
+    {{ i.regional_budget_seats  }}
+    {{ i.local_budget_seats  }}
+    {{ i.private_seats  }}
+    {{ i.special_equipped_classrooms  }}
+    {{ i.practical_training_facilities  }}
+    {{ i.libraries  }}
+    {{ i.sports_facilities  }}
+    {{ i.educational_resources  }}
+    <p>{% if i.accessible_buildings %}<a href="{{ i.accessible_buildings.url }}">Беспрепятственный доступ в здания образовательной организации</a>{% endif %}</p>
+    {{ i.special_dietary_requirements  }}
+    {{ i.electronic_resources_accessibility  }}
+    {{ i.special_technical_learning_tools  }}
+    {{ i.dormitory_accessible_conditions  }}
+    {{ i.adapted_housing_units_in_dormitory  }}
+   {% endfor %}
+{% endblock %}

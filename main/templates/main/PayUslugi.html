@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Образовательные стандарты и требования {% endblock %}
+
+{% block content %} 
+<div class="card">
+  <div class="card-body">
+      {% for i in pay %}
+          <h5 class="card-title">{{ i.order_of_services }}</h5>
+          {% if i.contract_sample %}
+              <a href="{{ i.contract_sample.url }}" class="card-link">Образец договора об оказании платных образовательных услуг</a>
+          {% endif %}
+          <p class="card-text">Стоимость обучения: {{ i.tuition_cost }}</p>
+          <p class="card-text">Сумма платежа: {{ i.payment_amount }}</p>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

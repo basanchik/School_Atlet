@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %} Руководство и состав организации  {% endblock %}
+
+{% block content %} 
+    {% for i in otdels %}
+    <article class="tocenter">
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.nameOtdel }}</h5>
+                <p class="card-text">{{ i.adressOtdel }}</p>
+                {% if i.docsOtdel %}
+                <p class="card-text"><a href="{{ i.docsOtdel.url }}">Документ</a></p>
+                {% endif %}
+                {% for i in Col%}
+                <p class="card-text">{{ i.nameSotr }}<small class="text-body-secondary"></small></p>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+        </div>
+    </article>
+    {% endfor %}
+
+{% endblock %}

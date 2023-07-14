@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %} Главная {% endblock %}
+
+{% block content %}  
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for i in news %}
+  <div class="col"> 
+   <div class="card h-100"style="width: 25rem;" >
+      <img src="{{ i.image.url }}" class="card-img-top" alt="..." style="width: 15rem; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ i.name }}</h5>
+        <p class="card-text"><a class="nav-link" href="{% url 'newsitem' i.id %}">подробнее</a></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">{{ i.date }}</small>
+      </div>
+    </div>
+  </div> 
+  {% endfor %} 
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Наша структура{% endblock %}
+
+{% block content %}
+    {% for i in Pedagog %}     
+        <div class="col-md-4">
+            <img src="{{ i.image.url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+    {% endfor %}  
+{% endblock %}
